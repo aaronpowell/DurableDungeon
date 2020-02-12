@@ -7,9 +7,7 @@
         "type": "shell",
         "problemMatcher": "$msCompile",
         "options": {
-          "shell": {
-            "executable": "powershell.exe"
-          }
+          "cwd": "${workspaceFolder}/src/csharp"
         }
       },
       {
@@ -23,9 +21,7 @@
         },
         "problemMatcher": "$msCompile",
         "options": {
-          "shell": {
-            "executable": "powershell.exe"
-          }
+          "cwd": "${workspaceFolder}/src/csharp"
         }
       },
       {
@@ -34,9 +30,7 @@
         "type": "shell",
         "problemMatcher": "$msCompile",
         "options": {
-          "shell": {
-            "executable": "powershell.exe"
-          }
+          "cwd": "${workspaceFolder}/src/csharp"
         }
       },
       {
@@ -46,19 +40,14 @@
         "dependsOn": "clean release",
         "problemMatcher": "$msCompile",
         "options": {
-          "shell": {
-            "executable": "powershell.exe"
-          }
+          "cwd": "${workspaceFolder}/src/csharp"
         }
       },
       {
         "type": "func",
         "dependsOn": "build",
         "options": {
-          "cwd": "${workspaceFolder}/DurableDungeon/bin/Debug/netcoreapp2.1",
-          "shell": {
-            "executable": "powershell.exe"
-          }
+          "cwd": "${workspaceFolder}/src/csharp/DurableDungeon/bin/Debug/netcoreapp2.1"
         },
         "command": "host start",
         "isBackground": true,

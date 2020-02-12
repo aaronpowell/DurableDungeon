@@ -1,10 +1,10 @@
 {
-    "azureFunctions.projectRuntime": "~2",
-    "azureFunctions.projectLanguage": "C#",
-    "azureFunctions.templateFilter": "Verified",
-    "azureFunctions.deploySubpath": "bin/Release/netcoreapp2.1/publish",
-    "azureFunctions.preDeployTask": "publish",
-    "debug.internalConsoleOptions": "neverOpen",
-    "FSharp.fsacRuntime": "netcore"
-  }
-  
+  "azureFunctions.projectRuntime": "~2",
+  "azureFunctions.projectLanguage": "C#",
+  "azureFunctions.templateFilter": "Verified",
+  "azureFunctions.deploySubpath": "src/csharp/bin/Release/netcoreapp2.1/publish",
+  "azureFunctions.preDeployTask": "publish",
+  "azureFunctions.projectSubpath": "src/csharp",
+  "debug.internalConsoleOptions": "neverOpen",
+  "FSharp.fsacRuntime": "netcore"
+}
