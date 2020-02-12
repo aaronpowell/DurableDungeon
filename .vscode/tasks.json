@@ -1,58 +1,86 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-      {
-        "label": "clean",
-        "command": "dotnet clean",
-        "type": "shell",
-        "problemMatcher": "$msCompile",
-        "options": {
-          "cwd": "${workspaceFolder}/src/csharp"
-        }
-      },
-      {
-        "label": "build",
-        "command": "dotnet build",
-        "type": "shell",
-        "dependsOn": "clean",
-        "group": {
-          "kind": "build",
-          "isDefault": true
-        },
-        "problemMatcher": "$msCompile",
-        "options": {
-          "cwd": "${workspaceFolder}/src/csharp"
-        }
-      },
-      {
-        "label": "clean release",
-        "command": "dotnet clean --configuration Release",
-        "type": "shell",
-        "problemMatcher": "$msCompile",
-        "options": {
-          "cwd": "${workspaceFolder}/src/csharp"
-        }
-      },
-      {
-        "label": "publish",
-        "command": "dotnet publish --configuration Release",
-        "type": "shell",
-        "dependsOn": "clean release",
-        "problemMatcher": "$msCompile",
-        "options": {
-          "cwd": "${workspaceFolder}/src/csharp"
-        }
-      },
-      {
-        "type": "func",
-        "dependsOn": "build",
-        "options": {
-          "cwd": "${workspaceFolder}/src/csharp/DurableDungeon/bin/Debug/netcoreapp2.1"
-        },
-        "command": "host start",
-        "isBackground": true,
-        "problemMatcher": "$func-watch"
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dotnet: clean",
+      "command": "dotnet clean",
+      "type": "shell",
+      "problemMatcher": "$msCompile",
+      "options": {
+        "cwd": "${workspaceFolder}/src/csharp"
       }
-    ]
-  }
-  
+    },
+    {
+      "label": "dotnet: build",
+      "command": "dotnet build",
+      "type": "shell",
+      "dependsOn": "clean",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$msCompile",
+      "options": {
+        "cwd": "${workspaceFolder}/src/csharp"
+      }
+    },
+    {
+      "label": "dotnet: clean release",
+      "command": "dotnet clean --configuration Release",
+      "type": "shell",
+      "problemMatcher": "$msCompile",
+      "options": {
+        "cwd": "${workspaceFolder}/src/csharp"
+      }
+    },
+    {
+      "label": "dotnet: publish",
+      "command": "dotnet publish --configuration Release",
+      "type": "shell",
+      "dependsOn": "clean release",
+      "problemMatcher": "$msCompile",
+      "options": {
+        "cwd": "${workspaceFolder}/src/csharp"
+      }
+    },
+    {
+      "type": "func",
+      "dependsOn": "build",
+      "options": {
+        "cwd": "${workspaceFolder}/src/csharp/DurableDungeon/bin/Debug/netcoreapp2.1"
+      },
+      "command": "host start",
+      "isBackground": true,
+      "problemMatcher": "$func-watch",
+      "label": "dotnet: func start"
+    },
+    {
+      "type": "func",
+      "command": "host start",
+      "problemMatcher": "$func-watch",
+      "isBackground": true,
+      "dependsOn": "js: npm install",
+      "label": "js: func start",
+      "options": {
+        "cwd": "${workspaceFolder}/src/js"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "js: npm install",
+      "command": "npm install",
+      "options": {
+        "cwd": "${workspaceFolder}/src/js"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "js: npm prune",
+      "command": "npm prune --production",
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}/src/js"
+      }
+    }
+  ]
+}

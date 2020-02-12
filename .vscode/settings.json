@@ -1,5 +1,5 @@
 {
-  "azureFunctions.projectRuntime": "~2",
+  "azureFunctions.projectRuntime": "~3",
   "azureFunctions.projectLanguage": "C#",
   "azureFunctions.templateFilter": "Verified",
   "azureFunctions.deploySubpath": "src/csharp/bin/Release/netcoreapp2.1/publish",
